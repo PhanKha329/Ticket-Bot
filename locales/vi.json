@@ -20,7 +20,7 @@
 		},
 		"ticketClosedDM": {
 			"title": "Phiếu hỗ trợ đã đóng",
-			"description": "Phiếu hỗ trợ số n°TICKETCOUNT đã được CLOSERNAME đóng với lý do sau: `REASON`\n\nDưới đây là bản ghi chép của phiếu hỗ trợ: TRANSCRIPTURL",
+			"description": "Phiếu hỗ trợ số `TICKETCOUNT` đã được CLOSERNAME đóng với lý do sau: `REASON`\n\nDưới đây là bản ghi chép của phiếu hỗ trợ: TRANSCRIPTURL",
 			"footer": {
 				"text": "ticket.pm"
 			}

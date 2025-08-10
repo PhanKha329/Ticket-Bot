@@ -74,11 +74,7 @@ export const log = async(logs: log, client: ExtendedClient) => {
 		const embed = new Discord.EmbedBuilder()
 			.setColor("#faa61a")
 			.setAuthor({ name: logs.user.tag, iconURL: logs.user.displayAvatarURL() })
-			.setDescription(
-				`${logs.user.tag} (<@${logs.user.id}>) Claimed the ticket n°${logs.ticketId} (<#${logs.ticketChannelId}>) after ${client.msToHm(
-					new Date(Number(BigInt(Date.now()) - BigInt(logs.ticketCreatedAt)))
-				)} of creation`
-			);
+			.setDescription(`${logs.user.tag} (<@${logs.user.id}>) Claimed the ticket`);
 		webhook
 			.send({
 				username: "Ticket Claimed",
@@ -93,9 +89,9 @@ export const log = async(logs: log, client: ExtendedClient) => {
 			.setColor("#ed4245")
 			.setAuthor({ name: logs.user.tag, iconURL: logs.user.displayAvatarURL() })
 			.setDescription(
-				`${logs.user.tag} (<@${logs.user.id}>) Closed the ticket n°${logs.ticketId} (<#${logs.ticketChannelId}>) with the reason: \`${
+				`${logs.user.tag} (<@${logs.user.id}>) Closed the ticket \`${logs.ticketId}\` (<#${logs.ticketChannelId}>) with the reason: \`${
 					logs.reason
-				}\` after ${client.msToHm(Number(BigInt(Date.now()) - BigInt(logs.ticketCreatedAt)))} of creation`
+				}\` `
 			);
 
 		webhook
@@ -112,9 +108,7 @@ export const log = async(logs: log, client: ExtendedClient) => {
 			.setColor("#ed4245")
 			.setAuthor({ name: logs.user.tag, iconURL: logs.user.displayAvatarURL() })
 			.setDescription(
-				`${logs.user.tag} (<@${logs.user.id}>) Deleted the ticket n°${logs.ticketId} after ${client.msToHm(
-					new Date(Number(BigInt(Date.now()) - BigInt(logs.ticketCreatedAt)))
-				)} of creation\n\nTranscript: ${logs.transcriptURL}`
+				`${logs.user.tag} (<@${logs.user.id}>) Deleted the ticket \`${logs.ticketId}\`\n\nTranscript: ${logs.transcriptURL}`
 			);
 
 		webhook
@@ -131,7 +125,7 @@ export const log = async(logs: log, client: ExtendedClient) => {
 			.setColor("#3ba55c")
 			.setAuthor({ name: logs.user.tag, iconURL: logs.user.displayAvatarURL() })
 			.setDescription(
-				`${logs.user.tag} (<@${logs.user.id}>) Added <@${logs.target.id}> (${logs.target.id}) to the ticket n°${logs.ticketId} (<#${logs.ticketChannelId}>)`
+				`${logs.user.tag} (<@${logs.user.id}>) Added <@${logs.target.id}> (${logs.target.id}) to the ticket \`${logs.ticketId}\` (<#${logs.ticketChannelId}>)`
 			);
 
 		webhook
@@ -147,7 +141,7 @@ export const log = async(logs: log, client: ExtendedClient) => {
 			.setColor("#ed4245")
 			.setAuthor({ name: logs.user.tag, iconURL: logs.user.displayAvatarURL() })
 			.setDescription(
-				`${logs.user.tag} (<@${logs.user.id}>) Removed <@${logs.target.id}> (${logs.target.id}) from the ticket n°${logs.ticketId} (<#${logs.ticketChannelId}>)`
+				`${logs.user.tag} (<@${logs.user.id}>) Removed <@${logs.target.id}> (${logs.target.id}) from the ticket \`${logs.ticketId}\` (<#${logs.ticketChannelId}>)`
 			);
 		webhook
 			.send({

@@ -21,7 +21,7 @@
 		},
 		"ticketClosedDM": {
 			"title": "Ticket closed",
-			"description": "The ticket n°TICKETCOUNT has been closed by CLOSERNAME with the following reason: `REASON`\n\nHere is the transcript of the ticket: TRANSCRIPTURL",
+			"description": "The ticket TICKETCOUNT has been closed by CLOSERNAME with the following reason: `REASON`\n\nHere is the transcript of the ticket: TRANSCRIPTURL",
 			"footer": {
 				"text": "ticket.pm"
 			}
